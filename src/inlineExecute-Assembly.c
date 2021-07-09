@@ -438,7 +438,9 @@ void go(char* args, int length) {//Executes .NET assembly in memory
 	for (long i = 0; i < argumentCount; i++)
 	{
 		//Insert the string from argumentsArray[i] into the safearray
-		OLEAUT32$SafeArrayPutElement(vtPsa.parray, &i, OLEAUT32$SysAllocString(argumentsArray[i]));
+      		OLEAUT32$SafeArrayPutElement(vtPsa.parray, &i, bstrArg);
+      		OLEAUT32$SysFreeString( bstrArg );
+		BSTR bstrArg = OLEAUT32$SysAllocString(argumentsArray[i]);
 	}
 		
 	//Break ETW
