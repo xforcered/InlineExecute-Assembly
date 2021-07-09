@@ -591,6 +591,7 @@ void go(char* args, int length) {//Executes .NET assembly in memory
 	OLEAUT32$VariantClear(&retVal);
 	OLEAUT32$VariantClear(&obj);
 	OLEAUT32$VariantClear(&vtPsa);
+	KERNEL32$GlobalFree((HGLOBAL)lpszBuffer);
 	
 	if (NULL != psaStaticMethodArgs) {
 		OLEAUT32$SafeArrayDestroy(psaStaticMethodArgs);
