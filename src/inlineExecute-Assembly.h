@@ -43,6 +43,7 @@ WINBASEAPI HRESULT WINAPI OLEAUT32$SafeArrayPutElement(SAFEARRAY* psa, LONG* rgI
 WINBASEAPI HRESULT WINAPI OLEAUT32$SafeArrayDestroy(SAFEARRAY* psa);
 WINBASEAPI HRESULT WINAPI OLEAUT32$VariantClear(VARIANTARG* pvarg);
 WINBASEAPI BSTR WINAPI OLEAUT32$SysAllocString(const OLECHAR* psz);
+WINBASEAPI VOID WINAPI OLEAUT32$SysFreeString(BSTR bstrString);
 
 #define intZeroMemory(addr,size) memset((addr),0,size)
 #define intAlloc(size) KERNEL32$HeapAlloc(KERNEL32$GetProcessHeap(), HEAP_ZERO_MEMORY, size)
